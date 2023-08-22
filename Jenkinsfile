@@ -34,7 +34,9 @@ pipeline {
     stage('Integration Test') {
       steps {
         node(label: 'test') {
-          sh './mvnw verify -P tomcat90'
+          sh '''chmod +x mvnw
+
+./mvnw verify -P tomcat90'''
         }
 
       }
